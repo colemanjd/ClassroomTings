@@ -1,73 +1,60 @@
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>jQuery UI Draggable - Default functionality</title>
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
-  <style>
-  #draggable { width: 150px; height: 150px; padding: 0.5em; }
-  #seat {width: 150px; height: 150px; padding: .5em;}
-  </style>
-  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-  <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
-  <script>
-  function draw() {
-    $( function() {
-      $( "#seat" ).draggable();
-    } );
-  
-  var canvas = document.getElementById('canvas');
-  if (canvas.getContext) {
-    var ctx = canvas.getContext('2d');
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <script type="application/javascript">
+    function draw() {
+      var canvas = document.getElementById('canvas');
+      if (canvas.getContext) {
+        var ctx = canvas.getContext('2d');
 
-    ctx.fillStyle = 'rgb(43, 255, 0)';
-    ctx.fillRect(10, 10, 50, 50);
-    
-   ctx.fillStyle = 'rgb(25, 25, 25)';
-    ctx.fillRect(110, 10, 50, 50);
-   
-    ctx.fillStyle = 'rgb(35, 99, 19)';
-    ctx.fillRect(210, 10, 50, 50);
-   
-   ctx.fillStyle = 'rgb(76, 166, 255)';
-    ctx.fillRect(310, 10, 50, 50);
-   
-   ctx.fillStyle = 'rgb(0, 0, 0)';
-    ctx.fillRect(210, 210, 100, 200);
+        ctx.fillStyle = 'rgb(43, 255, 0)';
+        ctx.fillRect(10, 10, 50, 50);
+        
+       ctx.fillStyle = 'rgb(25, 25, 25)';
+        ctx.fillRect(110, 10, 50, 50);
+       
+        ctx.fillStyle = 'rgb(35, 99, 19)';
+        ctx.fillRect(210, 10, 50, 50);
+       
+       ctx.fillStyle = 'rgb(76, 166, 255)';
+        ctx.fillRect(310, 10, 50, 50);
+       
+       ctx.fillStyle = 'rgb(0, 0, 0)'; 
+        ctx.fillRect(110, 210, 100, 200);
+       
+       ctx.fillStyle = 'rgb(0, 0, 0)'; 
+        ctx.fillRect(110, 510, 100, 200);
 
-    ctx.fillStyle = 'rgb(43, 255, 0)';
-    ctx.fillRect(10, 110, 50, 50);
-   
-   ctx.fillStyle = 'rgb(43, 255, 0)';
-    ctx.fillRect(10, 210, 50, 50);
+        ctx.fillStyle = 'rgb(43, 255, 0)';
+        ctx.fillRect(10, 110, 50, 50);
+       
+       ctx.fillStyle = 'rgb(43, 255, 0)';
+        ctx.fillRect(10, 210, 50, 50);
 
-    ctx.fillStyle = 'rgb(43, 255, 0)';
-    ctx.fillRect(10, 310, 50, 50);
-   
-   ctx.fillStyle = 'rgb(43, 255, 0)';
-    ctx.fillRect(10, 410, 50, 50);
-   
-   ctx.fillStyle = 'rgb(43, 255, 0)';
-    ctx.fillRect(10, 510, 50, 50);
+        ctx.fillStyle = 'rgb(43, 255, 0)';
+        ctx.fillRect(10, 310, 50, 50);
+       
+       ctx.fillStyle = 'rgb(43, 255, 0)';
+        ctx.fillRect(10, 410, 50, 50);
+       
+       ctx.fillStyle = 'rgb(43, 255, 0)';
+        ctx.fillRect(10, 510, 50, 50);
 
-    ctx.fillStyle = 'rgb(43, 255, 0)';
-    ctx.fillRect(10, 610, 50, 50);
-   
-   ctx.fillStyle = 'rgb(43, 255, 0)';
-    ctx.fillRect(10, 710, 50, 50);
+        ctx.fillStyle = 'rgb(43, 255, 0)';
+        ctx.fillRect(10, 610, 50, 50);
+       
+       ctx.fillStyle = 'rgb(43, 255, 0)';
+        ctx.fillRect(10, 710, 50, 50);
 
-    ctx.fillStyle = 'rgb(43, 255, 0)';
-    ctx.fillRect(10, 810, 50, 50);
-   
-   
-  }
-}
-</script>
-</head>
-<body onload="draw();">
-<canvas id="canvas" width="1000" height="1000"></canvas>
- 
- 
-</body>
+        ctx.fillStyle = 'rgb(43, 255, 0)';
+        ctx.fillRect(10, 810, 50, 50);
+       
+       
+      }
+    }
+  </script>
+ </head>
+ <body onload="draw();">
+   <canvas id="canvas" width="1000" height="1000"></canvas>
+ </body>
 </html>
