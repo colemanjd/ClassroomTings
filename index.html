@@ -6,6 +6,9 @@
       var canvas = document.getElementById('canvas');
       if (canvas.getContext) {
         var ctx = canvas.getContext('2d');
+       
+       ctx.fillStyle = 'rgb(92, 58, 13)';
+        ctx.fillRect(0, 240, 10, 87.5);
 
         ctx.fillStyle = 'rgb(43, 255, 0)';
         ctx.fillRect(10, 10, 50, 50);
@@ -55,6 +58,6 @@
   </script>
  </head>
  <body onload="draw();">
-   <canvas id="canvas" style="border: 1px solid" width="1000" height="1000"></canvas>
+   <canvas id="canvas" style="border: 1px solid" width="955" height="1205"></canvas>
  </body>
 </html>
