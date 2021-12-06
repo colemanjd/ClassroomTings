@@ -3,111 +3,144 @@
   <title>Mills 302 B</title>
   <meta charset="utf-8"/>
   <script type="application/javascript">
+
+  empty_color='rgb(43, 255, 0)';
+  selected_color='rgb(0, 204, 68)';
+  submitted_color='rgb(76, 166, 255)';
+  occupied_color='rgb(25, 25, 25)';
+
+  chairs = [{
+    state:"empty",
+    x:361.66,
+    y:898.5,
+  },{
+    state:"empty",
+    x:520.82,
+    y:898.5,
+  },{
+    state:"empty",
+    x:149.25,
+    y:327.75,
+  },{
+    state:"empty",
+    x:149.25,
+    y:459.25,
+  },{
+    state:"empty",
+    x:149.25,
+    y:590.75,
+  },{
+    state:"empty",
+    x:149.25,
+    y:722.25,
+  },{
+    state:"empty",
+    x:361.66,
+    y:898.5,
+  },{
+    state:"empty",
+    x:718.25,
+    y:327.75,
+  },{
+    state:"empty",
+    x:718.25,
+    y:459.25,
+  },{
+    state:"empty",
+    x:718.25,
+    y:590.75,
+  },{
+    state:"empty",
+    x:718.25,
+    y:722.25,
+  },{
+    state:"empty",
+    x:298.4375,
+    y:160.5,
+  },{
+    state:"empty",
+    x:438.75,
+    y:160.5,
+  },{
+    state:"empty",
+    x:579.0625,
+    y:160.5,
+  }
+]
+
+
+
     function draw() {
       var canvas = document.getElementById('canvas');
       if (canvas.getContext) {
         var ctx = canvas.getContext('2d');
-       
+
+
+
        <!--Blackboard-->
        ctx.fillStyle = 'rgb(92, 58, 13)';
         ctx.fillRect(0, 240, 10, 940);
-       
-       
+
+
        <!--Door-->
        ctx.fillStyle = 'rgb(207, 130, 29)';
         ctx.fillRect(723.75, 0, 200, 20);
-       
-       
-       
+
+
+
        <!--Tables-->
        ctx.fillStyle = 'rgb(0, 0, 0)';
         ctx.fillRect(238.75, 240, 477.5, 217.5);
-       
+
        ctx.fillStyle = 'rgb(0, 0, 0)';
         ctx.fillRect(238.75, 459.5, 477.5, 217.5);
-       
+
        ctx.fillStyle = 'rgb(0, 0, 0)';
         ctx.fillRect(238.75, 679, 477.5, 217.5);
-       
-       
-       
-       <!--Bottom Left Chair-->
-        ctx.fillStyle = 'rgb(43, 255, 0)';
-        ctx.fillRect(361.66, 898.5, 87.5, 77.5);
-       
-       <!--Bottom Right Chair-->
-        ctx.fillStyle = 'rgb(43, 255, 0)';
-        ctx.fillRect(520.82, 898.5, 87.5, 77.5);
-       
-       
-       
-       <!--Left First Chair-->
-        ctx.fillStyle = 'rgb(43, 255, 0)';
-        ctx.fillRect(149.25, 327.75, 87.5, 77.5);
-       
-       <!--Left Second Chair-->
-        ctx.fillStyle = 'rgb(43, 255, 0)';
-        ctx.fillRect(149.25, 459.25, 87.5, 77.5);
-       
-       <!--Left Third Chair-->
-        ctx.fillStyle = 'rgb(43, 255, 0)';
-        ctx.fillRect(149.25, 590.75, 87.5, 77.5);
-       
-       <!--Left Last Chair-->
-        ctx.fillStyle = 'rgb(43, 255, 0)';
-        ctx.fillRect(149.25, 722.25, 87.5, 77.5);
-       
-       
-       
-        <!--Right First Chair-->
-        ctx.fillStyle = 'rgb(43, 255, 0)';
-        ctx.fillRect(718.25, 327.75, 87.5, 77.5);
-       
-       <!--Right Second Chair-->
-        ctx.fillStyle = 'rgb(43, 255, 0)';
-        ctx.fillRect(718.25, 459.25, 87.5, 77.5);
-       
-       <!--Right Third Chair-->
-        ctx.fillStyle = 'rgb(43, 255, 0)';
-        ctx.fillRect(718.25, 590.75, 87.5, 77.5);
-       
-       <!--Right Last Chair-->
-        ctx.fillStyle = 'rgb(43, 255, 0)';
-        ctx.fillRect(718.25, 722.25, 87.5, 77.5);
-       
-       
-       
-        <!--Top Left Chair-->
-        ctx.fillStyle = 'rgb(43, 255, 0)';
-        ctx.fillRect(298.4375, 160.5, 87.5, 77.5);
-       
-       <!--Top Middle Chair-->
-        ctx.fillStyle = 'rgb(43, 255, 0)';
-        ctx.fillRect(438.75, 160.5, 87.5, 77.5);
-       
-       <!--Top Right Chair-->
-        ctx.fillStyle = 'rgb(43, 255, 0)';
-        ctx.fillRect(579.0625, 160.5, 87.5, 77.5);
-       
-       
-       
-       
-       
-        <!--Filled Seat-->
-       ctx.fillStyle = 'rgb(25, 25, 25)';
-        ctx.fillRect(110, 10, 50, 50);
-       <!--Selected Seat-->
-        ctx.fillStyle = 'rgb(0, 204, 68)';
-        ctx.fillRect(210, 10, 50, 50);
-       <!--Confirmed Logged In Seat-->
-       ctx.fillStyle = 'rgb(76, 166, 255)';
-        ctx.fillRect(310, 10, 50, 50);
-       
-       
 
-        
-       
-       
+
+
+
+
+
+       for(i=0; i<14; i++){
+         if(chairs[i].state=='empty'){
+           ctx.fillStyle = empty_color;
+         }
+         if(chairs[i].state=='selected'){
+           ctx.fillStyle = selected_color;
+         }
+         if(chairs[i].state=='submitted'){
+           ctx.fillStyle = submitted_color;
+         }
+         if(chairs[i].state=='occupied'){
+           ctx.fillStyle = occupied_color;
+         }
+         ctx.fillRect(chairs[i].x, chairs[i].y, 87.5, 77.5);
+       }
+
+
+
+
+
+
+       canvas.addEventListener('click', function(e) {
+        for(i=0; i<14; i++){
+          if(true){
+            console.log(chairs[i].state);
+            chairs[i].state='submitted';
+            console.log(chairs[i].state);
+
+          }
+        }
+       draw();
+       });
+
+
+
+
+
+
       }
     }
   </script>
