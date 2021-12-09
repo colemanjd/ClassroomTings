@@ -152,11 +152,15 @@
               $( document ).ready(function() {
                 var submit_seat = function() {
                   console.log(3);
+                  if(is_pressed==false){
                      for(i=0; i<14; i++){
                        if(chairs[i].state=='selected'){
                          chairs[i].state='submitted';
                          ctx.fillStyle = submitted_color;
-                         is_pressed = true;                      
+                         is_pressed = true;
+                         draw();
+                         color_check();
+                       }
                        }
                    }
                  }
@@ -164,7 +168,11 @@
 
               });
 
-
+              function color_check (){
+                if(chairs[i].state=='submitted'){
+                  ctx.fillStyle = submitted_color;
+              }
+            }
       }
     }
   </script>
