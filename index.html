@@ -2,12 +2,14 @@
  <head>
   <title>Mills 302 B</title>
   <meta charset="utf-8"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script type="application/javascript">
 
   empty_color='rgb(43, 255, 0)';
   selected_color='rgb(0, 77, 0)';
   submitted_color='rgb(76, 166, 255)';
   occupied_color='rgb(25, 25, 25)';
+  var is_pressed=false;
 
   chairs = [{
     state:"empty",
@@ -142,16 +144,25 @@
                  }
                }
              }
-
+             if (is_pressed==false){
               draw();
+            }});
+
+
+              $( document ).ready(function() {
+                var submit_seat = function() {
+                  console.log(3);
+                     for(i=0; i<14; i++){
+                       if(chairs[i].state=='selected'){
+                         chairs[i].state='submitted';
+                         ctx.fillStyle = submitted_color;
+                         is_pressed = true;                      
+                       }
+                   }
+                 }
+                    $("#finalbutton").click(submit_seat);
+
               });
-
-
-
-
-
-
-
 
 
       }
